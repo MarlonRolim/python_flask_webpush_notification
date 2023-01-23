@@ -7,14 +7,12 @@ from pywebpush import webpush, WebPushException
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '9OLWxND4o83j4K4iuopO'
 
-DER_BASE64_ENCODED_PRIVATE_KEY_FILE_PATH = os.path.join(os.getcwd(),"private_key.txt")
-DER_BASE64_ENCODED_PUBLIC_KEY_FILE_PATH = os.path.join(os.getcwd(),"public_key.txt")
 
-VAPID_PRIVATE_KEY = open(DER_BASE64_ENCODED_PRIVATE_KEY_FILE_PATH, "r+").readline().strip("\n")
-VAPID_PUBLIC_KEY = open(DER_BASE64_ENCODED_PUBLIC_KEY_FILE_PATH, "r+").read().strip("\n")
+VAPID_PRIVATE_KEY = "hTYyfptvH-frKuVg8sRqw7m8CXzyqSN9Kzhqbae2iRQ"
+VAPID_PUBLIC_KEY = "BGUHeKkyN5nd5BFTKzG9cgaX10oCGRk6pNXIyuUittBtRl_p8VUs33FCoqcUUlf-h5L436ioZ4GgAgH5RdRalOo"
 
 VAPID_CLAIMS = {
-"sub": "mailto:develop@raturi.in"
+"sub": "mailto: <marlon.rolim@resinasbrasil.com.br>"
 }
 
 def send_web_push(subscription_information, message_body):
@@ -63,4 +61,4 @@ def push_v1():
         return jsonify({'failed':str(e)})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=8080)
+    app.run()

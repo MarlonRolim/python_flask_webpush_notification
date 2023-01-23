@@ -10,6 +10,7 @@
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	
 	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
@@ -40,7 +41,7 @@
 			<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="push_message()">Test Push Notification</button>
 		</section>
 	</main>
-
+	<script src="/static/sw.js"></script>
 	<script src="{{ url_for('static',filename='main.js') }}"></script>
 	<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 </body>
